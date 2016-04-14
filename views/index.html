@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- These meta tags mean that the browser will render the width
+         of the page at the width of its own screen. -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bean - Get the best fix</title>
+        <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <!-- handlebars -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <!-- STYLESHEETS  -->
+        <
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+        <script src= "http://maps.googleapis.com/maps/api/js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+        <script src="scripts/app.js"></script>
+
+  </head>
+  <body>
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="mainHeader">Bean</h1>
+          <p class="mainPara">San Francisco's hottest Coffee Stores</p>
+        </div>
+      </div>
+
+       <!-- Header row created to have breif information about how web app works -->
+      <section id='welcome-header' class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <br><br>
+            <hr>
+             <!--covering whole page-->
+            <h2>Welcome to Bean!</h2>
+            <br>
+            <div class="para">
+            <p>Do you get a little stressed, tired, & run down?<br>
+              Bean is going to be your best friend!  How you ask, by creating an amazing collection of<br>
+            Coffee Stores in your home city thats how! The artasian crafted cup of coffee is taking America <br>
+            by storm, and lets be honest us tredy go getters need to be up to date with the latest and happening coffee.<br>
+          I mean if don't have to wait ina line for my coffee then it aint happening. Thats where Bean is going to keep your<br>
+        sweet craving tastebuds up todate with San Francisco's top 12 Coffee Stores.</p></div>
+        <hr>
+      </div>
+        </div>
+      </section>
+      <br>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-sm-4">
+
+            <br>
+            <img src="images/two.jpg" class="img-circle drinks" alt="Random Name">
+          </div>
+          <div class="col-sm-4">
+            <br>
+            <img src="images/one.jpg" class="img-circle drinks" alt="Random Name">
+          </div>
+          <div class="col-sm-4">
+            <br>
+            <img src="images/three.jpg" class="img-circle drinks" alt="Random Name">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Form to allow users to add their favorite coffee shop information -->
+      <section id='coffee-form' class="container">
+        <div class="row">
+          <div  class="col-md-10 col-md-offset-1">
+            <hr>
+            <button type="button" class="btn addStore btn-danger btn-lg" data-toggle="collapse" data-target="#demo">ADD STORE</button>
+            <br>
+            <hr>
+            <br><br>
+            <div id="demo" class="collapse">
+            <form class="form-group" id="shop-entry">
+              <fieldset>
+                <!-- form name -->
+                <legend>Add Coffee Shop</legend>
+                <!-- Coffee store name input -->
+                 <div class="form-group row" id="inputs">
+                  <div class="col-md-6">
+                    <input id="name" name="name" type="text" placeholder="Enter store name" class="form-control input-md" required="">
+                    <input id="address-input" name="address" type="text" placeholder="Enter address" class="form-control input-md" required="">
+                    <input id="state-input" name="state" type="text" placeholder="Enter state" class="form-control input-md" required="">
+                    <input id="email-input" name="email" type="text" placeholder="Enter email" class="form-control input-md" >
+                  </div>
+                  <div class="col-md-6">
+                    <input id="ratings-input" name="ratings" min="1" max="5" type="number" placeholder="+ -" class="form-control input-md">
+                    <input id="city-input" name="city" type="text" placeholder="Enter city" class="form-control input-md" required="">
+                    <input id="zipcode-input" name="zipcode" type="text" placeholder="Enter Zipcode" class="form-control input-md" required="">
+                  </div>
+              </div>
+              <!-- Button -->
+              <div class="form-group">
+                  <div class="col-md-12">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-info">Submit</button>
+                  </div>
+              </div>
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- divs that will have top ten coffee shops appended too -->
+    <div class="container">
+      <legend>TOP 12 TRENDING</legend>
+      <!-- <div class="col-md-10 col-md-offest-1"> -->
+
+        <div id="shops-list">
+          <script id="stores-template" type="text/x-handlebars-template">
+            <div class="row">
+              {{#each stores}}
+              <div class=" store" data-store-id="{{_id}}">
+
+                <!-- begin store internal row -->
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="panel">
+                      <div class="image">
+                        <img class="imAge" src={{image}}>
+                        <span class='title'>{{name}}</span>
+                      </div>
+                      <div class="content">
+
+                        <!-- <h4 class='header'>Store:</h4>
+                        <span class='store-name'>{{name}}</span> -->
+
+                        <h4 class='header'>Address:</h4>
+                        <span class='store-address'>{{address}}</span>
+
+                        <h4 class='header'>City:</h4>
+                        <span class='store-address'>{{city}}</span>
+
+                        <h4 class='header'>Zipcode:</h4>
+                        <span class='store-address'>{{zipcode}}</span>
+
+                        <h4 class='header'>Average store rating:</h4>
+                        <span class='store-ratings'>{{rating}}</span>
+                      </div>
+                      <div class="action">
+                        <button id="ubtn" class='btn btn-default action add-rating'>Add Rating</button>
+                        <button id="ubtn" class='btn btn-default action delete-store'>Delete Store</button>
+                        <!-- <button class="secretButton" value='{{address}} {{city}} {{zipcode}}'>geotager</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- div.row -->
+              </div>
+              {{/each}}
+            </div>
+          </div>
+        </script>
+        <!-- </div> -->
+      </div>
+
+<div id="googleMap"></div>
+<div class="container">
+  <hr>
+  <div class="col-md-4">
+
+    <p><span class="glyphicon glyphicon-map-marker"></span>San Francisco, US</p>
+    <p><span class="glyphicon glyphicon-phone"></span>Phone: (415)999 8811</p>
+    <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+  </div>
+</div>
+<footer class="text-center">
+  <hr>
+</a><br><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><br>
+<p>Go back up and find yourself some good coffee!</p>
+<p>Copy Right @ Bean.co</p>
+</footer>
+
+
+
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="storeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Give me a rating</h4>
+        </div>
+
+        <div class="modal-body">
+
+      <fieldset class='form-horizontal'>
+          <!-- Text input = Ratings-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="ratingVote">Add Rating</label>
+                <div class="col-md-4">
+              <input id="ratingVote" name="ratingVote" min="1" max="5" type="number" placeholder="+"  class="form-control input-md" placeholder="rating!">
+            </div>
+          </div>
+
+          <!-- Text input = Users Email-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="userEmail">Your Email</label>
+            <div class="col-md-4">
+            <input id="userEmail" name="userEmail" type="email" class="form-control input-md"  placeholder="Enter email">
+          </div>
+        </div>
+      </fieldset>
+
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-block" id="saveRating">Submit</button>
+        <button type="button" class="btn btn-info"  data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+ </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  </body>
+</html>
