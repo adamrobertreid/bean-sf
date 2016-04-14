@@ -1,0 +1,25 @@
+{
+  "name": "project_001",
+  "version": "1.0.0",
+  "description": "Bean",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamrobertreid/project_001.git"
+  },
+  "author": "Adam Reid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamrobertreid/project_001/issues"
+  },
+  "homepage": "https://github.com/adamrobertreid/project_001#readme"
+}
