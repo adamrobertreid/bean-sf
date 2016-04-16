@@ -1,6 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect( process.env.MONGOLAB_URI ||
-                  process.env.MONGOHQ_URL ||
+mongoose.connect( process.env.MONGODB_URI ||
                       "mongodb://localhost/project_01");
 
 // update once file is created
