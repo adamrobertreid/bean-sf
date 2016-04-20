@@ -92,23 +92,23 @@ function destroy(req, res) {
   }
 
 
-// function update(req, res) {
-//   console.log('updating with store', req.body);
-//     db.Stores.findById(req.params.storeId, function(err, foundStore) {
-//       if(err) { console.log('storesController.update error', err); }
-//       foundStore.name = req.body.name;
-//       foundStore.address = req.body.address;
-//       foundStore.city = req.body.city;
-//       foundStore.state = req.body.state;
-//       foundStore.zipcode = req.body.zipcode;
-//       foundStore.save(function(err, savedStore) {
-//         if(err) { console.log('saving altered store failed'); }
-//         res.json(savedStore);
-//       });
-//     });
-//
-//   }
-// }
+function update(req, res) {
+  console.log('updating with store', req.body);
+    db.Stores.findById(req.params.storeId, function(err, foundStore) {
+      if(err) { console.log('storesController.update error', err); }
+      foundStore.name = req.body.name;
+      foundStore.address = req.body.address;
+      foundStore.city = req.body.city;
+      foundStore.state = req.body.state;
+      foundStore.zipcode = req.body.zipcode;
+      foundStore.save(function(err, savedStore) {
+        if(err) { console.log('saving altered store failed'); }
+        res.json(savedStore);
+      });
+    });
+
+  }
+
 
 
 
@@ -121,5 +121,6 @@ module.exports = {
   index: index,
   create: create,
   show: show,
-  destroy: destroy
+  destroy: destroy,
+  update: update
 };

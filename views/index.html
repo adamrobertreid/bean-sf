@@ -47,12 +47,10 @@
             <h2>Welcome to Bean!</h2>
             <br>
             <div class="para">
-            <p>Do you get a little stressed, tired, & run down?<br>
-              Bean is going to be your best friend!  How you ask, by creating an amazing collection of<br>
-            Coffee Stores in your home city thats how! The artasian crafted cup of coffee is taking America <br>
-            by storm, and lets be honest us tredy go getters need to be up to date with the latest and happening coffee.<br>
-          I mean if don't have to wait ina line for my coffee then it aint happening. Thats where Bean is going to keep your<br>
-        sweet craving tastebuds up todate with San Francisco's top 12 Coffee Stores.</p></div>
+            <p>Do you get a little stressed, tired, & run-down?<br>
+              Bean is going to be your best friend! How you ask? By curating an amazing collection of Coffee Shops in your home city.<br>
+            The artisan-crafted cup of coffee is taking America by storm, and us trendy go-getters need to be up-to-date with the latest<br>
+            and happening coffee. That is where Bean is going to keep your taste-buds happy with the Top 12 Coffee Shops in your area!.</p></div>
         <hr>
       </div>
         </div>
@@ -159,6 +157,7 @@
                       <div class="action">
                         <button id="ubtn" class='btn btn-default action add-rating'>Add Rating</button>
                         <button id="ubtn" class='btn btn-default action delete-store'>Delete Store</button>
+                        <button id="ubtn" class='btn btn-default action update-store'>Update Store</button>
                         <!-- <button class="secretButton" value='{{address}} {{city}} {{zipcode}}'>geotager</button> -->
                       </div>
                     </div>
@@ -191,9 +190,9 @@
 </footer>
 
 
-
+<!-- Modal to add just an email and vote -->
 <!-- Modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="storeModal">
+<div class="modal fade" role="dialog" id="storeModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -224,6 +223,61 @@
     </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-block" id="saveRating">Submit</button>
+        <button type="button" class="btn btn-info"  data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+ </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal to Update and edit stores-->
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="updateModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Update Store Information</h4>
+        </div>
+
+        <div class="modal-body">
+
+      <fieldset class='form-horizontal'>
+          <!-- Text input = Ratings-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="ratingVote">Name:</label>
+                <div class="col-md-4">
+              <input id="updateName" name="updateName" class="form-control input-md" placeholder="Update store name">
+            </div>
+          </div>
+
+          <!-- Text input = Users Email-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="userEmail">Address:</label>
+            <div class="col-md-4">
+            <input id="updateAddress" name="updateAddress" type="email" class="form-control input-md"  placeholder="Update Address">
+          </div>
+        </div>
+
+        <!-- Text input = Ratings-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="ratingVote">City:</label>
+              <div class="col-md-4">
+            <input id="updateCity" name="updateCity" class="form-control input-md" placeholder="Update city">
+          </div>
+        </div>
+
+        <!-- Text input = Ratings-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="ratingVote">Zipcode:</label>
+              <div class="col-md-4">
+            <input id="updateZipcode" name="updateZipcode" class="form-control input-md" placeholder="Update Zipcode">
+          </div>
+        </div>
+      </fieldset>
+
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-block" id="saveUpdate">Submit</button>
         <button type="button" class="btn btn-info"  data-dismiss="modal">Cancel</button>
       </div>
     </div><!-- /.modal-content -->

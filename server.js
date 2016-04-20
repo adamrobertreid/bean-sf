@@ -63,7 +63,7 @@ app.post('/api/stores/:storeId/ratings', controllers.ratings.create);
 
 app.delete('/api/stores/:storeId', controllers.stores.destroy);
 
-// app.put('/api/stores/:storeId', controllers.stores.update);
+app.put('/api/stores/', controllers.stores.update);
 
 
 
