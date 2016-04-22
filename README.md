@@ -112,6 +112,7 @@ function storeError(err){
 Created on Photoshop to div pixels W & H. Saved as .png and uploaded via imgur.
 
 
-###LINKS
-[Bean.co, Heroku LINK:](https://bean-co.herokuapp.com/)
+###LINK
+[Bean.co, Heroku LINK:](https://infinite-basin-75704.herokuapp.com/)
+###LINK
 [Bean.co, GitHub LINK:](https://github.com/adamrobertreid/project_01)
