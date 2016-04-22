@@ -10,6 +10,18 @@ $(document).ready(function() {
   console.log('app.js loaded!');
 
   //////////////////////////////////////////////////////////////////
+  //////UPDATE EXISTING STORE
+  /////////////////////////////////////////////////////////////////
+
+  $('#shops-list').on('click', '.update-store', function(e) {
+    console.log('.update-store clicked!');
+    var id= $(this).closest('.store').data('store-id');
+    console.log('this is the id of closest store',id);
+    $('#updateModal').data('store-id', id);
+    $('#updateModal').modal();
+  });
+
+  //////////////////////////////////////////////////////////////////
   //////HANDLEBARS COMPILER
   /////////////////////////////////////////////////////////////////
 
@@ -177,45 +189,11 @@ $('#shops-list').on('click', '.delete-store', deleteStoreHandle);
     $('div[data-store-id=' + deletedStore + ']').remove();
  }
 
- //////////////////////////////////////////////////////////////////
- //////UPDATE EXISTING STORE
- /////////////////////////////////////////////////////////////////
- // $('#shops-list').on('click', '.add-rating', function(e) {
- //     console.log('.add-rating clicked!');
- //     var id= $(this).closest('.store').data('store-id');
- //     console.log('this is the id of closest store',id);
- //     $('#storeModal').data('store-id', id);
- //     $('#storeModal').modal();
- // });
- // // for update: submit event on `.update-post` form
- // .on('submit', '.update-post', function (event) {
- //   event.preventDefault();
- //
- //   // find the post's id (stored in HTML as `data-id`)
- //   var id = $(this).closest('.store').attr('store-id');
- //
- //   // find the post to update by its id
- //   var storeToUpdate = allPosts.filter(function (post) {
- //     return post._id == postId;
- //   })[0];
- //
- //   // serialze form data
- //   var updatedStore = $(this).serialize();
- //
- //   // PUT request to update post
- //   $.ajax({
- //     type: 'PUT',
- //     url: '/api/stores/' + storetId,
- //     data: updatedStore,
- //     success: function(data) {
- //       // replace post to update with newly updated version (data)
- //       allStores.splice(allStores.indexOf(storeToUpdate), 1, data);
- //
- //       // render all posts to view
- //       storeSuccess(storeData);
- //     }
- //   });
- // });
+
+
+
+
+
 
  //////////////////////////////////////////////////////////////////
  //////GOOGLE MAPS & GEOGUESSER
